@@ -1,29 +1,38 @@
 # Installation on the college lab computer
 
-First check the lab's Python version in VS Code terminal:
+## 1. Check Python first
+In the VS Code terminal:
 
 ```bash
 python --version
 python -m pip --version
 ```
 
-If the repo has been cloned:
+If `python` is not recognised on Windows, try `py --version`.
+
+## 2. Install from the GitHub URL
+This does not require cloning the repository or installing Git:
+
 ```bash
-python -m pip install -e ".[all]"
+python -m pip install "dlpracticals[all] @ https://github.com/Srivardhni/dlprac/archive/refs/heads/main.zip"
 ```
 
-Run one practical:
+The package's `all` extra includes TensorFlow and the optional image/data libraries. TensorFlow wheels depend on Python version and OS, so check compatibility before installing on a shared lab computer.
+
+## 3. Run a practical
+For example, Experiment 3:
+
 ```bash
 python -m dlpracticals 3
 ```
 
-Run the keyword list by opening `dlpracticals/keywords/writing_guide.md`.
+Replace `3` with a number from 1 to 10. Experiment 4 and 5 ask for a dataset folder path.
 
-## Before installing TensorFlow
-TensorFlow support depends on Python version, operating system, and available hardware. Do not blindly install the newest TensorFlow on a lab machine. Check the lab's Python version and use the TensorFlow version approved by the course/lab.
+## 4. Open the keyword guide
+Open `dlpracticals/keywords/writing_guide.md` in the GitHub repository.
 
-## Current limitations
-- Experiments 4 and 5 expect local image folders organized by class/person.
-- Experiments 6, 8, and 9 use tiny toy examples to demonstrate architecture, not meaningful language models or translators.
-- Experiment 7 uses only ten sample sentences, so accuracy is not a real-world performance measure.
-- `reference/` is currently a scaffold pending comparison against each exact manual program. Do not treat it as a validated copy of all ten manual solutions.
+## Known limitations
+- Experiments 4 and 5 expect local image folders organised by class/person.
+- Experiments 6, 8, and 9 are toy architecture demonstrations, not usable language models or a trained translator.
+- Experiment 7 has only ten sample sentences, so its accuracy is not meaningful for real-world use.
+- `reference/` is still a scaffold and has not been validated against all ten manual programs.
