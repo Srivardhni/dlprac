@@ -1,0 +1,4 @@
+# Base numerical/plotting tools. Install TensorFlow separately after checking Python compatibility.
+numpy
+matplotlib
+scikit-learn
